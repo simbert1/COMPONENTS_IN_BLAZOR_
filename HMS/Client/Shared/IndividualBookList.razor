@@ -1,0 +1,19 @@
+﻿
+    <div>
+        <p> Title: @((MarkupString)book.Tittle)</p>
+        <p> Release Date: @book.ReleaseDate.ToString("dd MMM yyyy")  </p>
+
+        @if (DisplayButtons)
+        {
+            <button @onclick="Delete">Delete</button>
+        }
+    </div>
+@code {
+    [Parameter] public Books book { get; set; }
+    [Parameter] public bool DisplayButtons { get; set; } = false;
+    void Delete()
+    {
+
+        Console.WriteLine($"Deleting book ...");
+    }
+}
